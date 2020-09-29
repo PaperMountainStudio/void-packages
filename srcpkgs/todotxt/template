@@ -1,0 +1,26 @@
+# Template file for 'todotxt'
+pkgname=todotxt
+version=2.12.0
+revision=1
+#archs="i686 x86_64"
+wrksrc="todo.txt-cli-$version"
+#create_wrksrc=yes
+build_style=gnu-makefile
+#configure_args=""
+#make_build_args=""
+make_install_args="CONFIG_DIR=/etc INSTALL_DIR=/usr/bin BASH_COMPLETION=/usr/share/bash-completion/completions"
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+#hostmakedepends=""
+#makedepends=""
+#depends=""
+short_desc="Simple and extensible shell script for managing your todo.txt file"
+maintainer="Paper <paper@tilde.institute>"
+license="GPL-3.0-or-later"
+homepage="http://todotxt.org/"
+distfiles="https://github.com/todotxt/todo.txt-cli/archive/v$version.tar.gz"
+checksum=534361e21807619d20269e6e051fed10b58e283c35f83e9c1dc00841ae19a1a7
+
+do_check() {
+    make test
+}
