@@ -1,0 +1,26 @@
+# Template file for 'effitask'
+pkgname=effitask
+version=1.4.0
+revision=1
+#archs="i686 x86_64"
+#wrksrc=
+#create_wrksrc=yes
+build_style=cargo
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+#hostmakedepends=""
+makedepends="gtk+3-devel"
+#depends=""
+short_desc="Graphical task manager, based on the todo.txt format"
+maintainer="Paper <paper@tilde.institute>"
+license="MIT"
+homepage="https://github.com/sanpii/effitask"
+distfiles="$homepage/archive/$version.tar.gz"
+checksum=1186357e0ca4ed009273de8ba585d5a535955026d5096ac8fc15640e43a61460
+
+post_install() {
+    vlicense LICENSE
+}
