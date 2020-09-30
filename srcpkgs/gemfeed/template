@@ -1,0 +1,19 @@
+# Template file for 'gemfeed'
+pkgname=gemfeed
+version=2c58b4a576324753e67221ddb1e72e962990053b
+revision=1
+wrksrc="$pkgname"
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+depends="python3-feedgen"
+short_desc="Generate an Atom feed from a directory of text/gemini files"
+maintainer="Paper <paper@tilde.institute>"
+license="BSD-2-Clause"
+homepage="https://tildegit.org/solderpunk/gemfeed/"
+distfiles="https://tildegit.org/solderpunk/gemfeed/archive/$version.tar.gz"
+checksum=ec2f191bfed244744d36bd588344d6d3bebfa5010d3b07e7e9ade7654f8c38db
+
+post_install() {
+	vlicense LICENSE
+	vdoc README.md
+}
