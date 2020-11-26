@@ -1,0 +1,12 @@
+# Template file for 'abcmidi'
+pkgname=abcmidi
+version=2020.11.07
+revision=1
+wrksrc=${pkgname}
+build_style=gnu-configure
+short_desc="Utilites for working with ABC files"
+maintainer="Paper <paper@tilde.institute>"
+license="GPL-2.0-or-later"
+homepage="https://ifdo.ca/~seymour/runabc/top.html"
+distfiles="https://ifdo.ca/~seymour/runabc/abcMIDI-${version}.zip"
+checksum=60dacfc3debc54587048fe3a91c05c33d514532e20445a78f01663768311eb2a
