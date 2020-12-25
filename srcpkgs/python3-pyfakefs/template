@@ -1,0 +1,15 @@
+# Template file for 'python3-pyfakefs'
+pkgname=python3-pyfakefs
+version=4.4.0
+revision=1
+wrksrc=pyfakefs-${version}
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+checkdepends="python3-pytest"
+short_desc="Fake file system that mocks the Python file system modules"
+maintainer="Paper <paper@tilde.institute>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/jmcgeheeiv/pyfakefs/"
+changelog="https://raw.githubusercontent.com/jmcgeheeiv/pyfakefs/master/CHANGES.md"
+distfiles="https://github.com/jmcgeheeiv/pyfakefs/archive/v${version}.tar.gz"
+checksum=0dbab3e506a7b013b4a44bad09c0f86b41616d99481271fb6121b47a3b2141a9
