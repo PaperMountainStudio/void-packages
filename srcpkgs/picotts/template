@@ -1,0 +1,19 @@
+# Template file for 'picotts'
+pkgname=picotts
+version=0.1
+_commit=e3ba46009ee868911fa0b53db672a55f9cc13b1c
+revision=1
+wrksrc="picotts-$_commit/pico"
+build_style=gnu-configure
+hostmakedepends="automake libtool"
+makedepends="popt-devel"
+short_desc="Pico TTS: text to speech voice synthesizer from SVox"
+maintainer="Paper <paper@tilde.institute>"
+license="Apache-2.0"
+homepage="https://github.com/naggety/picotts"
+distfiles="https://github.com/naggety/picotts/archive/$_commit.tar.gz"
+checksum=533665137afe6af566d1e6c8ed34032f2e537c6e27489d4b77a04d02809200e6
+
+pre_configure() {
+    ./autogen.sh
+}
