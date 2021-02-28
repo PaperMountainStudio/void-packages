@@ -1,0 +1,21 @@
+# Template file for 'squeekboard'
+pkgname=squeekboard
+version=1.14.0
+revision=1
+wrksrc=${pkgname}-v${version}
+build_style=meson
+build_helper=rust
+configure_args="-Dstrict=false"
+hostmakedepends="glib-devel gettext pkg-config cargo wayland-devel"
+makedepends="rust gtk+3-devel gnome-desktop-devel libfeedback-devel"
+depends="feedbackd"
+short_desc="Final Librem5 keyboard"
+maintainer="Jan Christian Grünhage <jan.christian@gruenhage.xyz>"
+license="GPL-3.0-or-later"
+homepage="https://source.puri.sm/Librem5/squeekboard"
+distfiles="${homepage}/-/archive/v${version}/${pkgname}-v${version}.tar.gz"
+checksum=cc83ade8d507d7651e15c07ddf749450f72bdff0d650598b45f3395e47ddda38
+
+post_install() {
+	chmod +x ${DESTDIR}/usr/bin/squeekboard-entry
+}
