@@ -1,0 +1,22 @@
+# Template file for 'molly-brown'
+pkgname=molly-brown
+version=48f9a206c03c0470e1c132b9667c6daa3583dada
+revision=1
+wrksrc=$pkgname
+build_style=go
+go_import_path="tildegit.org/solderpunk/molly-brown"
+hostmakedepends="git"
+short_desc="Full-featured Gemini server implemented in Go"
+maintainer="Paper <paper@tilde.institute>"
+license="BSD-2-Clause"
+homepage="https://tildegit.org/solderpunk/molly-brown/"
+distfiles="https://tildegit.org/solderpunk/molly-brown/archive/$version.tar.gz"
+checksum=26c96aa4aa45119f20ab78816e16fbe1c7df320968ae1adcc61adc03283be947
+system_accounts="_molly"
+
+post_install() {
+	vlicense LICENSE
+    vsconf example.conf
+    vdoc README.md
+	vsv molly-brown
+}

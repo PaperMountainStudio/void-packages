@@ -1,0 +1,3 @@
+#!/bin/sh
+[ -r conf ] && . ./conf
+exec chpst -u _molly /usr/bin/molly-brown -c ${CONF:-/etc/molly.conf}
