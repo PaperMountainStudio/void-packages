@@ -1,0 +1,19 @@
+# Template file for 'tootle'
+pkgname=tootle
+version=1.0
+revision=1
+build_style=meson
+hostmakedepends="vala pkg-config gettext"
+makedepends="vala libgee08-devel gtk+3-devel libsoup-devel granite-devel json-glib-devel libhandy1-devel vala-devel glib-devel gettext-devel"
+short_desc="Native GTK Mastodon client"
+maintainer="Paper <paper@tilde.institute>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/bleakgrey/tootle/"
+distfiles="https://github.com/bleakgrey/tootle/archive/$version.tar.gz"
+checksum=e0a0a062b1b72010242f7bb4db97cd71190f23067188b5c07372264d768a0496
+
+post_install() {
+    mv ${DESTDIR}/usr/bin/com.github.bleakgrey.tootle ${DESTDIR}/usr/bin/tootle
+    mkdir -p ${DESTDIR}/usr/share/applications/
+    cp data/com.github.bleakgrey.tootle.desktop.in ${DESTDIR}/usr/share/applications/com.github.bleakgrey.tootle.desktop
+}
