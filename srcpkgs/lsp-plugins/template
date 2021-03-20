@@ -1,0 +1,39 @@
+# Template file for 'lsp-plugins'
+pkgname=lsp-plugins
+version=1.1.29
+revision=1
+build_style=gnu-makefile
+hostmakedepends="pkg-config php"
+makedepends="libsndfile-devel libX11-devel libglvnd-devel lv2 cairo-devel ladspa-sdk
+ jack-devel libstdc++-devel"
+short_desc="Collection of free plugins compatible with LADSPA, LV2 and LinuxVST"
+maintainer="Paper <paper@tilde.institute>"
+license="LGPL-3.0-or-later"
+homepage="https://lsp-plug.in/"
+distfiles="https://github.com/sadko4u/lsp-plugins/archive/${version}/${version}.tar.gz"
+checksum=5fd4bc90b5bd175cebba5d2330bbbaa96f29dd2ddd82cbe91559322b69a20d1b
+# makedepends=('jack' 'ladspa' 'libsndfile' 'lv2' 'php')
+#optdepends=('jack: for standalone applications'
+#            'ladspa-host: for LADSPA plugins'
+#            'lv2-host: for LV2 plugins'
+#            'vst-host: for VST plugins')
+# * glibc >= 2.19
+# * jack >= 1.9.5
+# * libGL
+# * libcairo >= 1.14
+# * libsndfile >= 1.0.25
+do_build() {
+    make CFLAGS="-fno-rtti"
+}
+ # gcc >= 4.7 OR clang >= 10.0.1
+ #  * gcc-c++ >= 4.7 OR clang-c++ >= 10.0.1
+ #  * libgcc_s1 >= 5.2
+ #  * libstdc++-devel >= 4.7
+ #  * jack-devel >= 1.9.5
+ #  * lv2-devel >= 1.10
+ #  * ladspa-devel >= 1.13
+ #  * libsndfile-devel >= 1.0.25
+ #  * libcairo-devel >= 1.14
+ #  * php >= 5.5.14
+ #  * libGL-devel >= 11.2.2
+ # 
