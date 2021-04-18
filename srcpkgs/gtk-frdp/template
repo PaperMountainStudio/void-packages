@@ -1,0 +1,19 @@
+# Template file for 'gtk-frdp'
+pkgname=gtk-frdp
+version=3.37.1
+revision=1
+wrksrc="$pkgname-v$version"
+build_style=meson
+hostmakedepends="vala pkg-config gobject-introspection"
+makedepends="freerdp-devel gtk+3-devel"
+short_desc="RDP viewer widget for GTK"
+maintainer="Paper <paper@tilde.institute>"
+license="LGPL-3.0-or-later"
+homepage="https://gitlab.gnome.org/GNOME/gtk-frdp/"
+distfiles="https://gitlab.gnome.org/GNOME/gtk-frdp/-/archive/v$version/gtk-frdp-v$version.tar.gz"
+checksum=c9ac40cb0deb577ea055d0d0cdc61456e983be79f587434be36e03fd8c678a11
+
+# post_install() {
+#     mv ${DESTDIR}/usr/local/* ${DESTDIR}/usr/
+#     rmdir ${DESTDIR}/usr/local/
+# }
