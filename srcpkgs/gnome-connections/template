@@ -1,0 +1,22 @@
+# Template file for 'gnome-connections'
+pkgname=gnome-connections
+version=40.0.1
+revision=1
+#archs="i686 x86_64"
+wrksrc="connections-$version"
+#create_wrksrc=yes
+build_style=meson
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="vala gettext pkg-config itstool"
+makedepends="glib-devel gtk+3-devel gtk-vnc-devel libgcrypt-devel gnutls-devel libsasl-devel gtk-frdp"
+depends=""
+short_desc="Remote desktop client for the GNOME desktop environment"
+maintainer="Paper <paper@tilde.institute>"
+license="GPL-3.0-or-later"
+homepage="https://gitlab.gnome.org/GNOME/connections/"
+distfiles="https://gitlab.gnome.org/GNOME/connections/-/archive/$version/connections-$version.tar.gz"
+checksum=72e5b49cfa5abfd2bf324bf89e973724c8308c810b5b2bd287eb93dfd664cacd
