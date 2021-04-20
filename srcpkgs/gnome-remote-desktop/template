@@ -1,0 +1,24 @@
+# Template file for 'gnome-remote-desktop'
+pkgname=gnome-remote-desktop
+version=40.1
+revision=1
+build_style=meson
+configure_args="-Drdp=false -Dsystemd_user_unit_dir=/tmp"
+hostmakedepends="pkg-config"
+makedepends="glib-devel pipewire-devel libsecret-devel libnotify-devel freerdp-devel libvncserver-devel"
+checkdepends="xvfb-run dbus"
+short_desc="Remote desktop server which allows you to connect to your machine remotely"
+maintainer="Paper <paper@tilde.institute>"
+license="GPL-2.0-or-later"
+homepage="https://gitlab.gnome.org/GNOME/gnome-remote-desktop/"
+distfiles="https://gitlab.gnome.org/GNOME/gnome-remote-desktop/-/archive/$version/gnome-remote-desktop-$version.tar.gz"
+checksum=3c8466cd40405a6887171ada556a800e467d85bb52a506a33409c803b2d4f746
+make_check=no # xvfb failed to start
+
+pre_configure() {
+    vsed -e '/systemd_dep/d' -i meson.build
+}
+
+post_install() {
+    rm -rf ${DESTDIR}/tmp
+}
