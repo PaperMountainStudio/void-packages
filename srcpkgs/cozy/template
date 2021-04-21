@@ -1,12 +1,11 @@
 # Template file for 'cozy'
 pkgname=cozy
-version=0.8.1
+version=0.9.3
 revision=1
 build_style=meson
 hostmakedepends="pkg-config glib-devel python3 python3-distro python3-peewee
- python3-mutagen python3-gobject-devel gettext"
-makedepends="glib-devel python3-distro python3-peewee python3-mutagen
- python3-gobject-devel libhandy1-devel"
+ python3-mutagen gettext python3-peewee"
+makedepends="glib-devel python3-gobject-devel libhandy1-devel"
 depends="python3 python3-peewee gst-libav gst-plugins-good1 gst1-python3
  python3-mutagen python3-distro python3-apsw python3-packaging python3-pytz
  python3-requests python3-gobject libhandy1"
@@ -15,4 +14,4 @@ maintainer="johannes <johannes.brechtmann@gmail.com>"
 license="GPL-3.0-only, LGPL-3.0-only"
 homepage="https://github.com/geigi/cozy"
 distfiles="https://github.com/geigi/cozy/archive/${version}.tar.gz"
-checksum=16fdb225ee24a1e1acff62c3e3c3eb7bf8fd602350f4aa66508ee741ae13d030
+checksum=391a55c68a9f8c612f1e7ef7b4bcb8e4d350205a8ccf4006eec330d812efa776
