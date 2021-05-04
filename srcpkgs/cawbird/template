@@ -1,8 +1,9 @@
 # Template file for 'cawbird'
 pkgname=cawbird
-version=1.3.2
-revision=2
+version=1.4.1
+revision=1
 build_style=meson
+configure_args="-Dconsumer_key_base64=a1hVdm9YWGY0WnkxOUNKczlEVDBHRGVYcQ== -Dconsumer_secret_base64=Y2ZxS3F0cHNkanp6Q0hzeTEzY2pHSmpxMlNta3Fvd2VWdDZoVzY3cXFyNnVrV2xPc2k="
 hostmakedepends="glib-devel pkg-config vala"
 makedepends="gspell-devel gst-plugins-base1-devel gtk+3-devel
  json-glib-devel libglib-devel liboauth-devel libsoup-devel rest-devel
@@ -13,7 +14,7 @@ maintainer="Paper <paper@tilde.institute>"
 license="GPL-3.0-or-later"
 homepage="https://ibboard.co.uk/cawbird/"
 distfiles="https://github.com/IBBoard/cawbird/archive/refs/tags/v${version}.tar.gz"
-checksum=20dd01b1b93f2608bbf6a83d5e4589927f875eff111a11366283b121c6136de7
+checksum=c527a07d447d189852582bbaff5e6d0d1e432b4b643e8a1703656bab25d31582
 
 do_check() {
 	mkdir -p "$HOME/.config"
