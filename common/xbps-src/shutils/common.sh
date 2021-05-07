@@ -650,7 +650,7 @@ setup_pkg() {
         exit 2
     fi
 
-    export XBPS_STATEDIR="${XBPS_BUILDDIR}/.xbps-${sourcepkg}"
+    export XBPS_STATEDIR="${XBPS_BUILDDIR}/.xbps-${sourcepkg}-${version}"
     export XBPS_WRAPPERDIR="${XBPS_STATEDIR}/wrappers"
 
     mkdir -p $XBPS_STATEDIR $XBPS_WRAPPERDIR
