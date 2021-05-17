@@ -20,6 +20,8 @@ alternatives="
 
 pre_check() {
 	vsed -i 's/done | more/done/g' test/Makefile
+	vsed -i 's/en_US.ISO-8859-1//' test/localenl.sh
+	vsed -i '/^LC_ALL=en_US.ISO-8859-1 passed$/d' test/localenl.ok
 
 	case "$XBPS_TARGET_MACHINE" in
 		*-musl)
