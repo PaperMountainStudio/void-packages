@@ -1,7 +1,7 @@
 # Template file for 'python-pycodestyle'
 pkgname=python-pycodestyle
-version=2.6.0
-revision=3
+version=2.7.0
+revision=1
 wrksrc="pycodestyle-${version}"
 build_style=python-module
 hostmakedepends="python-setuptools python3-setuptools"
@@ -11,8 +11,21 @@ maintainer="Alessio Sergi <al3hex@gmail.com>"
 license="MIT"
 homepage="https://github.com/PyCQA/pycodestyle"
 distfiles="${PYPI_SITE}/p/pycodestyle/pycodestyle-${version}.tar.gz"
-checksum=c58a7d2815e0e8d7972bf1803331fb0152f867bd89adf8a01dfd55085434192e
+checksum=c389c1d06bf7904078ca03399a4816f974a1d590090fecea0c63ec26ebaf1cef
 alternatives="pycodestyle:pycodestyle:/usr/bin/pycodestyle2"
+
+do_check() {
+	# from tox.ini
+	python3 -m pycodestyle --statistics pycodestyle.py
+	python3 -m pycodestyle --max-doc-length=72 --testsuite testsuite
+	python3 -m pycodestyle --max-doc-length=72 --doctest
+	python3 -m unittest discover testsuite -vv
+
+	python -m pycodestyle --statistics pycodestyle.py
+	python -m pycodestyle --max-doc-length=72 --testsuite testsuite
+	python -m pycodestyle --max-doc-length=72 --doctest
+	python -m unittest discover testsuite -vv
+}
 
 post_install() {
 	vlicense LICENSE
