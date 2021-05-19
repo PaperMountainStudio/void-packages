@@ -1,0 +1,35 @@
+# Template file for 'gnome-software'
+pkgname=gnome-software
+version=40.2
+revision=1
+build_style=meson
+configure_args="-Dvalgrind=false -Dpackagekit=false -Dfwupd=false -Dmalcontent=false $(vopt_bool gtk_doc gtk_doc)"
+hostmakedepends="pkg-config tar gtk-doc glib-devel"
+makedepends="AppStream-devel libxmlb-devel gnome-online-accounts-devel json-glib-devel libhandy1-devel
+ gsettings-desktop-schemas-devel gspell-devel polkit-devel flatpak-devel libgudev-devel libsoup-devel"
+depends=""
+short_desc="GNOME Software Center"
+maintainer="Paper <paper@tilde.institute>"
+license="GPL-3.0-or-later"
+homepage="https://gitlab.gnome.org/GNOME/gnome-software"
+distfiles="https://gitlab.gnome.org/GNOME/gnome-software/-/archive/$version/gnome-software-$version.tar.gz"
+checksum=f3d8d7ec6107487176a7683d6116f21c94bc79a49a1b73bf9a5b8d6f9e27280a
+make_check=no
+
+build_options="gtk_doc"
+
+if [ -z "$CROSS_BUILD" ]; then
+	build_options_default+=" gtk_doc"
+fi
+
+gnome-software-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		if [ "$build_option_gtk_doc" ]; then
+			vmove usr/share/gtk-doc
+		fi
+	}
+}
