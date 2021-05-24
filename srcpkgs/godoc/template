@@ -1,0 +1,17 @@
+# Template file for 'godoc'
+pkgname=godoc
+version=0.1.1
+revision=1
+wrksrc=tools-${version}
+build_style=go
+go_import_path="golang.org/x/tools/cmd/godoc"
+short_desc="Extracts, generates and serves documentation for Go programs"
+maintainer="Michal Vasilek <michal@vasilek.cz>"
+license="BSD-3-Clause"
+homepage="https://github.com/golang/tools"
+distfiles="https://github.com/golang/tools/archive/v${version}.tar.gz"
+checksum=ffc912096e79cef4ac9554c419e51014eca349019ced34753a2d4e7c1efa048e
+
+post_install() {
+	vlicense LICENSE
+}
