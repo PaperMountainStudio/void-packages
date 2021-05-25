@@ -1,6 +1,6 @@
 # Template file for 'python3-astroid'
 pkgname=python3-astroid
-version=2.5.3
+version=2.5.6
 revision=1
 wrksrc="astroid-${version}"
 build_style=python3-module
@@ -14,5 +14,5 @@ maintainer="Alessio Sergi <al3hex@gmail.com>"
 license="GPL-2.0-or-later, LGPL-2.1-or-later"
 homepage="https://github.com/PyCQA/astroid"
 changelog="https://raw.githubusercontent.com/PyCQA/astroid/master/ChangeLog"
-distfiles="${PYPI_SITE}/a/astroid/astroid-${version}.tar.gz"
-checksum=ad63b8552c70939568966811a088ef0bc880f99a24a00834abd0e3681b514f91
+distfiles="https://github.com/PyCQA/astroid/archive/refs/tags/v$version.tar.gz"
+checksum=46bfd832bfca8dc7face30f9c3992ff56ab65db70ea86b04a4e7f054428d8fdd
