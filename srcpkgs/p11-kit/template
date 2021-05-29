@@ -15,6 +15,7 @@ homepage="https://github.com/p11-glue/p11-kit"
 distfiles="${homepage}/releases/download/${version}/p11-kit-${version}.tar.xz"
 checksum=8a8f40153dd5a3f8e7c03e641f8db400133fb2a6a9ab2aee1b6d0cb0495ec6b6
 conf_files="/etc/pkcs11/pkcs11.conf"
+make_check=no # broken
 
 if [ "$XBPS_CHECK_PKGS" ]; then
 	configure_args+=" -Dtest=true"
