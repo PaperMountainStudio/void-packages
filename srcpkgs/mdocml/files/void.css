@@ -1,29 +1,69 @@
-
 /** Void style **/
-body { color: #333; }
-a { color: #478061; }
-a:hover { color: #000; }
+html {
+    --primary: #478061;
+    --secondary: #478061;
+    --foreground: black;
+    --background: white;
+	--primary-dark:#478061;
+}
 
-html { max-width: 100% }
-body { margin: 0 }
-#mandoc { max-width: 65em; margin: 0.8em }
+html {
+    color: var(--foreground);
+    background-color: var(--background);
+}
+
+html, body { margin: 0px; }
+a { color: var(--primary); }
+
+input, button, select {
+    height: 2.5em;
+    padding: .5em 1em;
+    color: var(--foreground);
+    background-color: inherit;
+}
+button {
+    border: 0px solid black;
+    border-radius: .25em;
+    color: white;
+    background-color: var(--secondary);
+}
+button:hover { background-color: var(--primary-dark); }
+input, select, fieldset {
+    border: 1px solid var(--foreground);
+    border-radius: .25em;
+}
+fieldset { margin: 1em; }
+input { padding: .5em inherit; }
+select {
+    margin-top: 1em;
+    /* from https://github.com/kognise/water.css */
+    background: var(--background) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='63' width='117' fill='%23000'%3E%3Cpath d='M115 2c-1-2-4-2-5 0L59 53 7 2a4 4 0 00-5 5l54 54 2 2 3-2 54-54c2-1 2-4 0-5z'/%3E%3C/svg%3E") calc(100% - 1em) 50%/1em no-repeat !important;
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 3em !important;
+}
+select[name="arch"] {
+    display: none;
+}
+
+a:hover { color: var(--foreground); }
 
 nav#void-nav {
 	width:100%;
 	min-height:50px;
-	background:#478061;
+	background:var(--primary-dark);
 	z-index:110;
-	font-size:14px
+	font-size:14px;
 }
 nav#void-nav ul {
 	float:right;
 	list-style:none;
-	margin:0
+	margin:0;
 }
 nav#void-nav ul li {
 	float:left;
 	margin:0;
-	clear:initial
+	clear:initial;
 }
 nav#void-nav ul li a {
 	display:block;
@@ -31,9 +71,26 @@ nav#void-nav ul li a {
 	line-height:20px;
 	font-size:1.2em;
 	color:#fff;
-	text-decoration: none
+	text-decoration: none;
 }
 nav#void-nav ul li a:hover,nav#void-nav ul li a:focus {
 	background:#000;
-	text-decoration:none
+	text-decoration:none;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        --primary: #62b086;
+        --secondary: #478061;
+        --foreground: #ccc;
+        --background: #222;
+        --primary-dark:#295340;
+    }
+    button {
+        color: var(--foreground);
+    }
+    select {
+        /* from https://github.com/kognise/water.css */
+        background: var(--background) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='63' width='117' fill='%23ccc'%3E%3Cpath d='M115 2c-1-2-4-2-5 0L59 53 7 2a4 4 0 00-5 5l54 54 2 2 3-2 54-54c2-1 2-4 0-5z'/%3E%3C/svg%3E") calc(100% - 1em) 50%/1em no-repeat !important;
+    }
 }
