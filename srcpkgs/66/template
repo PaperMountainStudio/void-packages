@@ -16,7 +16,7 @@ short_desc="Small tools built around s6 and s6-rc programs"
 maintainer="mobinmob <mobinmob@disroot.org>"
 license="ISC"
 homepage="http://web.obarun.org/software/"
-changelog="https://framagit.org/Obarun/66/raw/master/NEWS.md"
+changelog="https://framagit.org/Obarun/66/-/raw/master/doc/upgrade.md"
 distfiles="https://framagit.org/Obarun/66/-/archive/v${version}/66-v${version}.tar.bz2"
 checksum=99de5ede29670ffb55808dc0c3f28a49bf005d594ba3016b13271d4de025f589
 
@@ -27,7 +27,6 @@ system_accounts="_s6log"
 make_dirs="/var/log/66 0750 _s6log _s6log"
 
 pre_configure() {
-
 	# Clean the default $PATH for service scripts
 	vsed -i "s@PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin@PATH=/usr/bin:/usr/sbin@" \
 	 "${wrksrc}/skel/init.conf"
