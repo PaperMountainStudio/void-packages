@@ -54,7 +54,7 @@ update_check() {
               *cpan.*|\
               *pythonhosted.org*|\
               *github.com*|\
-              *//gitlab.*|\
+              *//gitlab.*|*framagit.org*|\
               *bitbucket.org*|\
               *ftp.gnome.org*|\
               *kernel.org/pub/linux/kernel/*|\
@@ -122,7 +122,7 @@ update_check() {
                 pkgurlname="$(printf %s "$url" | cut -d/ -f4,5)"
                 url="https://github.com/$pkgurlname/tags"
                 rx='/archive/refs/tags/(v?|\Q'"$pkgname"'\E-)?\K[\d.]+(?=\.tar\.gz")';;
-            *//gitlab.*)
+            *//gitlab.*|*framagit.org*)
                 pkgurlname="$(printf %s "$url" | cut -d/ -f1-5)"
                 url="$pkgurlname/tags"
                 rx='/archive/[^/]+/\Q'"$pkgname"'\E-v?\K[\d.]+(?=\.tar\.gz")';;
