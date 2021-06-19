@@ -4021,8 +4021,6 @@ libNX_X11.so.6 nx-libs-3.5.99.24_1
 librnnoise.so.0 rnnoise-0.4.1_1
 libttspico.so.0 picotts-0.1_1
 librnnoise.so.0 rnnoise-0.0.0.2021.01.22_1
-libadwaita-1.so.0 libadwaita-0.0.0.2021.04.17
-libadwaita-1.so.0 libadwaita-0.0.0.2021.04.17_1
 libgtk-frdp-0.1.so gtk-frdp-3.37.1_1
 libstemmer.so.0 libstemmer-2.1.0_1
 libgtk-frdp-0.1.so gtk-frdp-3.37.1_1
