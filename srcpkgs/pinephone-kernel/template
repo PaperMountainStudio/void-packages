@@ -1,16 +1,17 @@
 # Template file for 'pinephone-kernel'
 pkgname=pinephone-kernel
-version=5.10.12
-revision=2
-_tag=orange-pi-5.10-20210130-2109
+version=5.12.6
+revision=1
+_tag=orange-pi-5.12-20210523-1501
 wrksrc="linux-${_tag}"
 short_desc="Linux kernel and modules (${version%.*} series)"
 maintainer="John Sullivan <jsullivan@csumb.edu>"
 license="GPL-2.0-only"
 homepage="https://www.kernel.org"
-distfiles="https://github.com/megous/linux/archive/${_tag}.tar.gz"
-checksum=7ef48ee91f6b6cfdc74f3dc73753903748bcda3282f1ac6e2ff33d392f6c30ca
+distfiles="https://github.com/megous/linux/archive/refs/tags/${_tag}.tar.gz"
+checksum=5418defe426e9ee0cabe9ee2be09a0b8e7f033ccd8cd18d2a3c7f900eb8bd2bd
 python_version=3
+patch_args="-Np1"
 
 archs="aarch64*"
 
