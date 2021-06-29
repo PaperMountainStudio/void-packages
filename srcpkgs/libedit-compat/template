@@ -1,0 +1,20 @@
+# Template file for 'libedit-compat'
+pkgname=libedit-compat
+version=1
+revision=1
+build_style=meta
+short_desc="libedit readline compat helper"
+maintainer="Michal Vasilek <michal@vasilek.cz>"
+license="public"
+depends="libedit-devel"
+homepage="-"
+conflicts="readline-devel"
+
+do_install() {
+    ln -s /usr/include/editline/readline.h readline.h
+    ln -s /usr/lib/libedit.so "$DESTDIR"/usr/lib/libreadline.so
+    ln -s /usr/lib/libedit.so "$DESTDIR"/usr/lib/libhistory.so
+    vmkdir usr/include/readline
+    mv "readline.h" "$DESTDIR"/usr/include/readline/
+    touch "$DESTDIR"/usr/include/readline/history.h
+}
