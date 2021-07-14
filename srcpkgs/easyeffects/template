@@ -1,0 +1,18 @@
+# Template file for 'easyeffects'
+pkgname=easyeffects
+version=6.0.2
+revision=1
+build_style=meson
+hostmakedepends="itstool pkg-config gettext"
+makedepends="boost-devel glib-devel gsettings-desktop-schemas-devel
+ libsigc++3-devel gtkmm4-devel libebur128-devel lilv-devel
+ pipewire-devel sratom-devel zita-convolver-devel libbs2b-devel
+ libsamplerate-devel libsndfile-devel rnnoise-devel rubberband-devel speexdsp-devel json-c++"
+#depends="calf"
+short_desc="Sound effects for systems using PipeWire"
+maintainer="Artur Sinila <freesoftware@logarithmus.dev>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/wwmm/easyeffects"
+changelog="https://raw.githubusercontent.com/wwmm/easyeffects/master/CHANGELOG.md"
+distfiles="https://github.com/wwmm/easyeffects/archive/v${version}.tar.gz"
+checksum=f5554636ff082558fd1d2b25931671b0de60833262f7cd8c6688d51c6c6895b2
